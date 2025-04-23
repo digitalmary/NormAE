@@ -400,15 +400,15 @@ def app():
 
     os.makedirs(args.output_dir, exist_ok=True)
     model.plot_history(osp.join(args.output_dir, "history.png"))
-    fig, _ = plot_pca(
-        X_clean,
-        qc=info_df[args.qc_indicator_col].values if args.qc_indicator_col else None,
-        batch=info_df[args.batch_indicator_col].values
-        if args.batch_indicator_col
-        else None,
-        injection=info_df[args.order_indicator_col].values
-        if args.order_indicator_col
-        else None,
-    )
-    fig.savefig(osp.join(args.output_dir, "pca.png"))
+    # fig, _ = plot_pca(
+    #     X_clean,
+    #     qc=info_df[args.qc_indicator_col].values if args.qc_indicator_col else None,
+    #     batch=info_df[args.batch_indicator_col].values
+    #     if args.batch_indicator_col
+    #     else None,
+    #     injection=info_df[args.order_indicator_col].values
+    #     if args.order_indicator_col
+    #     else None,
+    # )
+    # fig.savefig(osp.join(args.output_dir, "pca.png"))
     X_clean_df.T.to_csv(osp.join(args.output_dir, "X_clean.csv"))
